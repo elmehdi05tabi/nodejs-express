@@ -5,4 +5,4 @@ const myDataSchema = new schema({
     summary : String,
     body : String,
 })
-module.exports = mongoose.model('myData',myDataSchema) ; 
+module.exports = mongoose.model('myData',myDataSchema);
