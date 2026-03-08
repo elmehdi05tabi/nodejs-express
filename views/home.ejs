@@ -1,24 +1,38 @@
-<html lang="en">
+<html lang="fr">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
+  <title>Data Table</title>
+  <link rel="stylesheet" href="style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:ital,wght@0,300;0,400;1,300&display=swap" rel="stylesheet">
 </head>
 <body>
-  <table>
-    <tr>
-      <th>Title</th>
-      <th>Summary</th>
-      <th>body</th>
-    </tr>
-    <% data.forEach(function (element) { %>
-    <tr>
-      <td><%= element.title %></td>
-      <td><%= element.summary %></td>
-      <td><%= element.body %></td>
-    </tr>
-<% }) %>
-
-  </table>
+  <div class="wrapper">
+    <div class="table-header">
+      <h1>Data OwerView</h1>
+      <span class="dot"></span>
+      <a href="/create">Create Product</a>
+    </div>
+    <div class="table-container">
+      <table>
+        <thead>
+          <tr>
+            <th>Title</th>
+            <th>Summary</th>
+            <th>Body</th>
+          </tr>
+        </thead>
+        <tbody>
+          <% let i = 1; data.forEach(function (element) { %>
+          <tr>
+            <td><span class="row-index"><%= i++ %></span><%= element.title %></td>
+            <td><%= element.summary %></td>
+            <td><%= element.body %></td>
+          </tr>
+          <% }) %>
+        </tbody>
+      </table>
+    </div>
+  </div>
 </body>
 </html>
